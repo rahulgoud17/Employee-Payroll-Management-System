@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monthly Payroll</title>
+    <style>
+        body { font-family: Arial; background: #f4f6f9; margin: 0; }
+        header { background: #1e293b; color: white; padding: 20px; text-align: center; }
+        .container { padding: 25px; }
+        input, select, button { padding: 10px; margin: 8px; }
+        button { background: #1e293b; color: white; border: none; cursor: pointer; }
+        table { width: 100%; border-collapse: collapse; background: white; margin-top: 25px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: center; }
+        th { background: #334155; color: white; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Monthly Payroll Management</h1>
+</header>
+
+<div class="container">
+    <h2>Create Payroll Record</h2>
+
+    <form id="payrollForm">
+        <input type="number" id="employee_id" placeholder="Employee ID" required>
+        <input type="number" id="salary_id" placeholder="Salary ID" required>
+        <input type="number" id="month" placeholder="Month (1-12)" min="1" max="12" required>
+        <input type="number" id="year" placeholder="Year" required>
+        <input type="date" id="payment_date" required>
+
+        <select id="payment_status" required>
+            <option value="">Select Status</option>
+            <option value="Paid">Paid</option>
+            <option value="Pending">Pending</option>
+        </select>
+
+        <button type="submit">Save Payroll</button>
+    </form>
+
+    <p id="message"></p>
+
+    <h2>Payroll Records</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Payroll ID</th>
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Salary ID</th>
+                <th>Month</th>
+                <th>Year</th>
+                <th>Net Salary</th>
+                <th>Payment Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="payrollTable"></tbody>
+    </table>
+</div>
+
+<script src="/js/payroll-client.js"></script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Management</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+        }
+
+        header {
+            background: #1e293b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background: #334155;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 20px;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        .container {
+            width: 90%;
+            margin: 30px auto;
+        }
+
+        .form-box, .table-box {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        input {
+            width: 95%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #cbd5e1;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background: #1e293b;
+            color: white;
+        }
+
+        @media (max-width: 650px) {
+            .container {
+                width: 95%;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            nav a {
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Employee Payroll Management System</h1>
+    <p>Employee Management</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="employees.html">Employees</a>
+    <a href="salary.html">Salary Details</a>
+    <a href="payroll.html">Payroll</a>
+</nav>
+
+<div class="container">
+
+    <div class="form-box">
+
+        <h2>Add New Employee</h2>
+
+        <form id="employeeForm">
+
+            <input type="text" id="name"
+                placeholder="Employee Name (e.g. Rahul Kumar)"
+                required>
+
+            <input type="text" id="department"
+                placeholder="Department (e.g. Computer Science)"
+                required>
+
+            <input type="text" id="designation"
+                placeholder="Designation (e.g. Software Developer)"
+                required>
+
+            <label>Joining Date</label>
+            <input type="date" id="joining_date" required>
+
+            <button type="submit">Add Employee</button>
+
+        </form>
+
+        <p id="message"></p>
+
+    </div>
+
+    <div class="table-box">
+
+        <h2>Employee Records</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Designation</th>
+                    <th>Joining Date</th>
+                </tr>
+            </thead>
+
+            <tbody id="employeeTable">
+                <tr>
+                    <td colspan="5">No employee records loaded yet.</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+<script src="/js/employee-client.js"></script>
+
+</body>
+</html>

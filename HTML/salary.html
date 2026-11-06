@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Salary Details</title>
+    <style>
+        body { font-family: Arial; background: #f4f6f9; margin: 0; }
+        header { background: #1e293b; color: white; padding: 20px; text-align: center; }
+        .container { padding: 25px; }
+        input, button { padding: 10px; margin: 8px; }
+        button { background: #1e293b; color: white; border: none; cursor: pointer; }
+        table { width: 100%; border-collapse: collapse; background: white; margin-top: 25px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: center; }
+        th { background: #334155; color: white; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Employee Salary Details</h1>
+</header>
+
+<div class="container">
+    <h2>Add Salary</h2>
+
+    <form id="salaryForm">
+        <input type="number" id="employee_id" placeholder="Employee ID" required>
+        <input type="number" id="basic_salary" placeholder="Basic Salary" required>
+        <input type="number" id="allowance" placeholder="Allowance" required>
+        <input type="number" id="deduction" placeholder="Deduction" required>
+        <button type="submit">Calculate & Save Salary</button>
+    </form>
+
+    <p id="message"></p>
+
+    <h2>Salary Records</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Salary ID</th>
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Basic Salary</th>
+                <th>Allowance</th>
+                <th>Deduction</th>
+                <th>Net Salary</th>
+            </tr>
+        </thead>
+        <tbody id="salaryTable"></tbody>
+    </table>
+</div>
+
+<script src="/js/salary-client.js"></script>
+</body>
+</html>
